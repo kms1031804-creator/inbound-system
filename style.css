@@ -1,0 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap');
+
+:root {
+  --navy: #132A46;
+  --navy-light: #1F3E63;
+  --bg: #F4F6F8;
+  --card: #FFFFFF;
+  --ink: #1A1E24;
+  --ink-muted: #6B7280;
+  --border: #E2E5EA;
+  --stamp-red: #B8433A;
+  --teal: #2F7B6E;
+  --amber: #C77E00;
+  --gray-status: #8B8D93;
+  --font-display: 'Shippori Mincho', serif;
+  --font-body: 'Noto Sans JP', sans-serif;
+  --radius: 10px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background: var(--bg);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; }
+
+/* ---- Topbar ---- */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--navy);
+  color: #fff;
+  padding: 14px 28px;
+}
+.topbar .brand {
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.topbar .brand .mark {
+  width: 30px; height: 30px; border-radius: 50%;
+  border: 1.5px solid #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 13px; font-family: var(--font-display);
+}
+.topbar .user {
+  font-size: 13px;
+  color: #C9D3E0;
+  display: flex; align-items: center; gap: 10px;
+}
+.topbar .user .role-pill {
+  background: rgba(255,255,255,0.12);
+  padding: 3px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+}
+
+/* ---- Layout ---- */
+.layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  min-height: calc(100vh - 58px);
+}
+.sidebar {
+  background: #fff;
+  border-right: 1px solid var(--border);
+  padding: 24px 18px;
+}
+.sidebar h3 {
+  font-size: 12px;
+  color: var(--ink-muted);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin: 0 0 10px;
+}
+.sidebar .filter-group { margin-bottom: 28px; }
+.sidebar label {
+  display: block;
+  font-size: 14px;
+  padding: 7px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  color: var(--ink);
+}
+.sidebar label:hover { background: var(--bg); }
+.sidebar input[type="checkbox"] { margin-right: 8px; }
+
+.main { padding: 28px 32px; }
+
+/* ---- Headings ---- */
+.page-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 22px;
+}
+.page-head h1 {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0;
+}
+.page-head p {
+  font-size: 13px;
+  color: var(--ink-muted);
+  margin: 4px 0 0;
+}
+
+/* ---- Buttons ---- */
+button, .btn {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 500;
+  padding: 9px 18px;
+  border-radius: 6px;
+  border: 1px solid var(--navy);
+  background: var(--navy);
+  color: #fff;
+  cursor: pointer;
+  transition: opacity 0.15s ease;
+}
+button:hover, .btn:hover { opacity: 0.88; }
+button.secondary {
+  background: transparent;
+  color: var(--navy);
+  border: 1px solid var(--border);
+}
+button:disabled {
+  background: var(--border);
+  border-color: var(--border);
+  color: var(--ink-muted);
+  cursor: not-allowed;
+  opacity: 1;
+}
+
+/* ---- Stat cards ---- */
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 24px;
+}
+.stat-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px 18px;
+}
+.stat-card .label { font-size: 12px; color: var(--ink-muted); }
+.stat-card .value { font-family: var(--font-display); font-size: 28px; font-weight: 700; margin-top: 4px; }
+
+/* ---- Table ---- */
+.table-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+thead th {
+  text-align: left;
+  font-size: 12px;
+  color: var(--ink-muted);
+  font-weight: 500;
+  padding: 12px 18px;
+  border-bottom: 1px solid var(--border);
+}
+tbody td { padding: 14px 18px; border-bottom: 1px solid var(--border); }
+tbody tr:last-child td { border-bottom: none; }
+tbody tr { cursor: pointer; transition: background 0.12s ease; }
+tbody tr:hover { background: var(--bg); }
+
+/* ---- Stamp badge (signature element) ---- */
+.stamp {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 12px 3px 10px;
+  border-radius: 999px;
+  border: 1.5px solid currentColor;
+  transform: rotate(-2deg);
+  letter-spacing: 0.03em;
+}
+.stamp::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.stamp.uketsuke { color: var(--gray-status); }
+.stamp.kakunin  { color: var(--amber); }
+.stamp.sakusei  { color: #2A5CA8; }
+.stamp.kanryo   { color: var(--teal); }
+
+/* ---- Cards (detail page) ---- */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 22px;
+  margin-bottom: 16px;
+}
+.card h2 {
+  font-size: 15px;
+  font-weight: 500;
+  margin: 0 0 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.card .meta-row { display: flex; justify-content: space-between; padding: 6px 0; font-size: 13px; border-bottom: 1px solid var(--bg); }
+.card .meta-row:last-child { border-bottom: none; }
+.card .meta-row .k { color: var(--ink-muted); }
+.card .email-body {
+  font-size: 13px;
+  line-height: 1.9;
+  color: var(--ink);
+  background: var(--bg);
+  border-radius: 8px;
+  padding: 14px 16px;
+  white-space: pre-wrap;
+}
+.breadcrumb { font-size: 13px; color: var(--ink-muted); margin-bottom: 10px; }
+.breadcrumb a { text-decoration: none; }
+.breadcrumb a:hover { text-decoration: underline; }
+
+/* ---- Login ---- */
+.login-wrap {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+}
+.login-hero {
+  background: var(--navy);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px;
+  position: relative;
+}
+.login-hero .mark-large {
+  width: 64px; height: 64px; border-radius: 50%;
+  border: 1.5px solid #fff;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-display); font-size: 24px;
+  margin-bottom: 28px;
+}
+.login-hero h1 {
+  font-family: var(--font-display);
+  font-size: 34px;
+  line-height: 1.5;
+  margin: 0 0 14px;
+}
+.login-hero p { color: #B9C4D6; font-size: 14px; line-height: 1.9; max-width: 380px; }
+.login-form-side {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+.login-form {
+  width: 100%;
+  max-width: 340px;
+}
+.login-form h2 { font-size: 18px; margin: 0 0 4px; }
+.login-form .sub { font-size: 13px; color: var(--ink-muted); margin: 0 0 26px; }
+.field { margin-bottom: 16px; }
+.field label { display: block; font-size: 13px; margin-bottom: 6px; color: var(--ink); }
+.field input, .field select {
+  width: 100%;
+  font-family: var(--font-body);
+  font-size: 14px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: #fff;
+}
+.field input:focus, .field select:focus, button:focus-visible {
+  outline: 2px solid var(--navy);
+  outline-offset: 1px;
+}
+.login-form button { width: 100%; margin-top: 6px; padding: 11px; }
+
+@media (max-width: 760px) {
+  .layout { grid-template-columns: 1fr; }
+  .sidebar { display: none; }
+  .stat-row { grid-template-columns: repeat(2, 1fr); }
+  .login-wrap { grid-template-columns: 1fr; }
+  .login-hero { padding: 40px 28px; }
+}

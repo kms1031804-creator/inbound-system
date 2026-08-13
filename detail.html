@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>依頼詳細 | インバウンド手配管理システム</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand"><span class="mark">手配</span>インバウンド手配管理システム</div>
+  <div class="user">田中 担当者 <span class="role-pill">担当者</span></div>
+</div>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="filter-group">
+      <h3>地域</h3>
+      <label><input type="checkbox" checked> 東日本</label>
+      <label><input type="checkbox" checked> 西日本</label>
+    </div>
+    <div class="filter-group">
+      <h3>支店</h3>
+      <label><input type="checkbox" checked> 東京支店</label>
+      <label><input type="checkbox" checked> 大阪支店</label>
+    </div>
+  </aside>
+
+  <main class="main" style="max-width:640px;">
+    <div class="breadcrumb"><a href="dashboard.html">依頼一覧</a> ／ 東京支店</div>
+
+    <div class="page-head">
+      <div>
+        <h1>東京支店の依頼</h1>
+        <p>担当者：金 担当　／　人数：68名　／　最終更新：08/13</p>
+      </div>
+      <span class="stamp kakunin">確認中</span>
+    </div>
+
+    <div class="card">
+      <h2>✉ 原文（依頼メール）</h2>
+      <div class="email-body">お世話になっております。
+東京支店担当者です。
+今回は68名様のご旅行を予定しております。
+ホテルはロッテホテルをご希望です。</div>
+    </div>
+
+    <div class="card">
+      <h2>🏨 ホテル手配状況</h2>
+      <div class="meta-row"><span class="k">指定ホテル</span><span>Lotte Hotel Tokyo</span></div>
+      <div class="meta-row"><span class="k">担当部署</span><span>ホテル部門</span></div>
+      <div class="meta-row"><span class="k">手配状況</span><span class="stamp kakunin">確認中</span></div>
+      <div class="meta-row"><span class="k">本社からの修正</span><span>なし</span></div>
+    </div>
+
+    <div class="card">
+      <h2>📄 計画書</h2>
+      <p style="font-size:13px; color:var(--ink-muted); margin:0 0 14px;">ホテル手配が確定してから作成できます。</p>
+      <button disabled>計画書を作成する</button>
+    </div>
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

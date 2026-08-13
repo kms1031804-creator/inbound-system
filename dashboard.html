@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>依頼一覧 | インバウンド手配管理システム</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="brand"><span class="mark">手配</span>インバウンド手配管理システム</div>
+  <div class="user">田中 担当者 <span class="role-pill">担当者</span></div>
+</div>
+
+<div class="layout">
+  <aside class="sidebar">
+    <div class="filter-group">
+      <h3>地域</h3>
+      <label><input type="checkbox" checked> 東日本</label>
+      <label><input type="checkbox" checked> 西日本</label>
+    </div>
+    <div class="filter-group">
+      <h3>支店</h3>
+      <label><input type="checkbox" checked> 東京支店</label>
+      <label><input type="checkbox" checked> 大阪支店</label>
+      <label><input type="checkbox" checked> 福岡支店</label>
+      <label><input type="checkbox" checked> 名古屋支店</label>
+    </div>
+    <div class="filter-group">
+      <h3>ステータス</h3>
+      <label><input type="checkbox" checked> 受付</label>
+      <label><input type="checkbox" checked> 確認中</label>
+      <label><input type="checkbox" checked> 作成中</label>
+      <label><input type="checkbox" checked> 完了</label>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="page-head">
+      <div>
+        <h1>依頼一覧</h1>
+        <p>支店から届いた依頼の進捗状況を確認できます。</p>
+      </div>
+      <button onclick="location.href='login.html'">＋ 新規依頼登録</button>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat-card"><div class="label">受付</div><div class="value">4</div></div>
+      <div class="stat-card"><div class="label">確認中</div><div class="value">3</div></div>
+      <div class="stat-card"><div class="label">作成中</div><div class="value">2</div></div>
+      <div class="stat-card"><div class="label">完了</div><div class="value">7</div></div>
+    </div>
+
+    <div class="table-card">
+      <table>
+        <thead>
+          <tr>
+            <th>支店</th>
+            <th>人数</th>
+            <th>ステータス</th>
+            <th>担当者</th>
+            <th>最終更新</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr onclick="location.href='detail.html'">
+            <td>東京支店</td>
+            <td>68名</td>
+            <td><span class="stamp kakunin">確認中</span></td>
+            <td>金 担当</td>
+            <td>08/13</td>
+          </tr>
+          <tr onclick="location.href='detail.html'">
+            <td>大阪支店</td>
+            <td>32名</td>
+            <td><span class="stamp sakusei">作成中</span></td>
+            <td>李 担当</td>
+            <td>08/13</td>
+          </tr>
+          <tr onclick="location.href='detail.html'">
+            <td>福岡支店</td>
+            <td>15名</td>
+            <td><span class="stamp kanryo">完了</span></td>
+            <td>朴 担当</td>
+            <td>08/12</td>
+          </tr>
+          <tr onclick="location.href='detail.html'">
+            <td>名古屋支店</td>
+            <td>50名</td>
+            <td><span class="stamp uketsuke">受付</span></td>
+            <td>―</td>
+            <td>08/14</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
