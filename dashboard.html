@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>依頼一覧 | インバウンド手配管理システム</title>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.47.0/dist/tabler-icons.min.css">
 </head>
 <body>
 
@@ -42,7 +43,7 @@
         <h1>依頼一覧</h1>
         <p>支店から届いた依頼の進捗状況を確認できます。</p>
       </div>
-      <button onclick="location.href='login.html'">＋ 新規依頼登録</button>
+      <button onclick="location.href='login.html'"><i class="ti ti-plus"></i> 新規依頼登録</button>
     </div>
 
     <div class="stat-row">
@@ -65,32 +66,32 @@
         </thead>
         <tbody>
           <tr onclick="location.href='detail.html'">
-            <td>東京支店</td>
+            <td>東京支店<div style="font-size:12px;color:var(--ink-muted);margin-top:2px;">東日本</div></td>
             <td>68名</td>
             <td><span class="stamp kakunin">確認中</span></td>
             <td>金 担当</td>
-            <td>08/13</td>
+            <td>08/13 14:20</td>
           </tr>
           <tr onclick="location.href='detail.html'">
-            <td>大阪支店</td>
+            <td>大阪支店<div style="font-size:12px;color:var(--ink-muted);margin-top:2px;">西日本</div></td>
             <td>32名</td>
             <td><span class="stamp sakusei">作成中</span></td>
             <td>李 担当</td>
-            <td>08/13</td>
+            <td>08/13 09:05</td>
           </tr>
           <tr onclick="location.href='detail.html'">
-            <td>福岡支店</td>
+            <td>福岡支店<div style="font-size:12px;color:var(--ink-muted);margin-top:2px;">西日本</div></td>
             <td>15名</td>
             <td><span class="stamp kanryo">完了</span></td>
             <td>朴 担当</td>
-            <td>08/12</td>
+            <td>08/12 17:40</td>
           </tr>
           <tr onclick="location.href='detail.html'">
-            <td>名古屋支店</td>
+            <td>名古屋支店<div style="font-size:12px;color:var(--ink-muted);margin-top:2px;">東日本</div></td>
             <td>50名</td>
             <td><span class="stamp uketsuke">受付</span></td>
             <td>―</td>
-            <td>08/14</td>
+            <td>08/14 08:52</td>
           </tr>
         </tbody>
       </table>

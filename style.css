@@ -15,9 +15,13 @@
   --font-display: 'Shippori Mincho', serif;
   --font-body: 'Noto Sans JP', sans-serif;
   --radius: 10px;
+  --shadow-sm: 0 1px 2px rgba(19,42,70,0.07);
+  --shadow-md: 0 6px 20px rgba(19,42,70,0.10);
 }
 
 * { box-sizing: border-box; }
+
+[class^="ti-"], [class*=" ti-"] { vertical-align: -2px; }
 
 body {
   margin: 0;
@@ -37,6 +41,9 @@ a { color: inherit; }
   background: var(--navy);
   color: #fff;
   padding: 14px 28px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.14);
+  position: relative;
+  z-index: 2;
 }
 .topbar .brand {
   font-family: var(--font-display);
@@ -128,13 +135,19 @@ button, .btn {
   background: var(--navy);
   color: #fff;
   cursor: pointer;
-  transition: opacity 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, opacity 0.15s ease;
 }
-button:hover, .btn:hover { opacity: 0.88; }
+button:hover, .btn:hover { opacity: 0.92; transform: translateY(-1px); box-shadow: var(--shadow-md); }
+button:active, .btn:active { transform: translateY(0); }
 button.secondary {
   background: transparent;
   color: var(--navy);
   border: 1px solid var(--border);
+  box-shadow: none;
 }
 button:disabled {
   background: var(--border);
@@ -142,6 +155,8 @@ button:disabled {
   color: var(--ink-muted);
   cursor: not-allowed;
   opacity: 1;
+  box-shadow: none;
+  transform: none;
 }
 
 /* ---- Stat cards ---- */
@@ -156,7 +171,10 @@ button:disabled {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 16px 18px;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.15s ease, transform 0.15s ease;
 }
+.stat-card:hover { box-shadow: var(--shadow-md); transform: translateY(-2px); }
 .stat-card .label { font-size: 12px; color: var(--ink-muted); }
 .stat-card .value { font-family: var(--font-display); font-size: 28px; font-weight: 700; margin-top: 4px; }
 
@@ -166,6 +184,7 @@ button:disabled {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   overflow: hidden;
+  box-shadow: var(--shadow-sm);
 }
 table { width: 100%; border-collapse: collapse; font-size: 14px; }
 thead th {
@@ -174,12 +193,14 @@ thead th {
   color: var(--ink-muted);
   font-weight: 500;
   padding: 12px 18px;
+  background: var(--bg);
   border-bottom: 1px solid var(--border);
 }
 tbody td { padding: 14px 18px; border-bottom: 1px solid var(--border); }
 tbody tr:last-child td { border-bottom: none; }
-tbody tr { cursor: pointer; transition: background 0.12s ease; }
-tbody tr:hover { background: var(--bg); }
+tbody tr { cursor: pointer; transition: background 0.12s ease, box-shadow 0.12s ease; }
+tbody tr:hover { background: var(--bg); box-shadow: inset 3px 0 0 var(--navy); }
+tbody tr:hover td:first-child { padding-left: 15px; }
 
 /* ---- Stamp badge (signature element) ---- */
 .stamp {
@@ -193,12 +214,13 @@ tbody tr:hover { background: var(--bg); }
   border: 1.5px solid currentColor;
   transform: rotate(-2deg);
   letter-spacing: 0.03em;
+  box-shadow: var(--shadow-sm);
 }
 .stamp::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
-.stamp.uketsuke { color: var(--gray-status); }
-.stamp.kakunin  { color: var(--amber); }
-.stamp.sakusei  { color: #2A5CA8; }
-.stamp.kanryo   { color: var(--teal); }
+.stamp.uketsuke { color: var(--gray-status); background: rgba(139,141,147,0.09); }
+.stamp.kakunin  { color: var(--amber); background: rgba(199,126,0,0.09); }
+.stamp.sakusei  { color: #2A5CA8; background: rgba(42,92,168,0.09); }
+.stamp.kanryo   { color: var(--teal); background: rgba(47,123,110,0.09); }
 
 /* ---- Cards (detail page) ---- */
 .card {
@@ -207,14 +229,27 @@ tbody tr:hover { background: var(--bg); }
   border-radius: 12px;
   padding: 20px 22px;
   margin-bottom: 16px;
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 0.15s ease;
 }
+.card:hover { box-shadow: var(--shadow-md); }
 .card h2 {
   font-size: 15px;
   font-weight: 500;
-  margin: 0 0 12px;
+  margin: 0 0 14px;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
+}
+.card h2 i {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  background: var(--bg);
+  color: var(--navy);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
 }
 .card .meta-row { display: flex; justify-content: space-between; padding: 6px 0; font-size: 13px; border-bottom: 1px solid var(--bg); }
 .card .meta-row:last-child { border-bottom: none; }
@@ -240,6 +275,7 @@ tbody tr:hover { background: var(--bg); }
 }
 .login-hero {
   background: var(--navy);
+  background-image: repeating-linear-gradient(135deg, rgba(255,255,255,0.025) 0 2px, transparent 2px 26px);
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -253,6 +289,7 @@ tbody tr:hover { background: var(--bg); }
   display: flex; align-items: center; justify-content: center;
   font-family: var(--font-display); font-size: 24px;
   margin-bottom: 28px;
+  box-shadow: 0 0 0 5px rgba(255,255,255,0.06);
 }
 .login-hero h1 {
   font-family: var(--font-display);

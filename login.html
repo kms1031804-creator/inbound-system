@@ -3,116 +3,50 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>金敏錫 / 김민석 ポートフォリオ</title>
+<title>ログイン | インバウンド手配管理システム</title>
 <link rel="stylesheet" href="style.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.47.0/dist/tabler-icons.min.css">
 </head>
 <body>
-
-<nav class="nav">
-  <div class="name">金敏錫 <span style="color:var(--ink-muted); font-weight:400;">/ キムミンソク</span></div>
-  <ul>
-    <li><a href="#about">自己紹介</a></li>
-    <li><a href="#experience">実務経験</a></li>
-    <li><a href="#interest">興味分野</a></li>
-    <li><a href="#works">制作物</a></li>
-  </ul>
-</nav>
-
-<header class="hero" id="about">
-  <div class="photo"><img src="assets/images/profile.jpg" alt="金敏錫の証明写真"></div>
-  <div>
-    <p class="names"><strong>金敏錫</strong>　キムミンソク　（김민석）</p>
-    <h1>行動力を生かして、新しい価値を生み出せる人になる。
-      <span class="kr">행동력을 살려 새로운 가치를 만들어내는 사람이 되겠습니다.</span>
-    </h1>
-    <p style="font-size:14px; color:var(--ink-muted); margin:14px 0 0; max-width:480px;">
-      非専攻からIT業界に挑戦しています。旅行会社での実務経験を活かし、日本のIT企業で価値を生み出したいと考えています。
-      <span class="kr">비전공 출신으로 IT업계에 도전하고 있습니다. 여행사에서의 실무 경험을 살려 일본 IT기업에서 가치를 만들어내고 싶습니다.</span>
-    </p>
+<div class="login-wrap">
+  <div class="login-hero">
+    <div class="mark-large">手配</div>
+    <h1>インバウンド<br>手配管理システム</h1>
+    <p>支店からの依頼メールの整理、ホテル部門との手配確認、計画書の作成までを一元管理します。</p>
   </div>
-</header>
+  <div class="login-form-side">
+    <form class="login-form" id="login-form">
+      <h2>ログイン</h2>
+      <p class="sub">アカウント情報を入力してください。</p>
 
-<div class="facts">
-  <div class="fact-card">
-    <div class="label"><i class="ti ti-briefcase"></i>前職 / 이전 직무</div>
-    <div class="value">ロッテJTB 日本人インバウンド部門
-      <span class="kr">롯데JTB 일본인바운드 부서(실무 실습)</span>
-    </div>
-  </div>
-  <div class="fact-card">
-    <div class="label"><i class="ti ti-language"></i>日本語 / 일본어</div>
-    <div class="value">JLPT N1
-      <span class="kr">일본어능력시험 N1 취득</span>
-    </div>
-  </div>
-  <div class="fact-card">
-    <div class="label"><i class="ti ti-heart"></i>趣味 / 취미</div>
-    <div class="value">筋トレ・ランニング
-      <span class="kr">근력 운동, 러닝</span>
-    </div>
+      <div class="field">
+        <label for="email">メールアドレス</label>
+        <input type="email" id="email" placeholder="tanaka@example.co.jp" required>
+      </div>
+
+      <div class="field">
+        <label for="password">パスワード</label>
+        <input type="password" id="password" placeholder="••••••••" required>
+      </div>
+
+      <div class="field">
+        <label for="role">役割</label>
+        <select id="role">
+          <option value="staff">担当者</option>
+          <option value="hotel">ホテル部門</option>
+          <option value="admin">管理者</option>
+        </select>
+      </div>
+
+      <p id="error-msg" style="color:var(--stamp-red); font-size:13px; display:none; margin:-6px 0 12px;">
+        メールアドレスとパスワードを入力してください。
+      </p>
+
+      <button type="submit">ログイン</button>
+    </form>
   </div>
 </div>
 
-<section class="block" id="experience">
-  <h2>実務経験<span class="kr">실습 경험</span></h2>
-  <p class="lead">ロッテJTB 日本人インバウンド部門での実習業務の流れです。<span class="kr">롯데JTB 일본인바운드 부서에서의 실습 업무 흐름입니다.</span></p>
-
-  <div class="timeline">
-    <div class="step">
-      <div class="t">依頼メールの受付</div>
-      <div class="d">日本本社を経由して支店担当者からの依頼メールが届く<span class="kr">　/　일본 본사를 거쳐 지점 담당자의 의뢰 메일이 도착</span></div>
-    </div>
-    <div class="step">
-      <div class="t">内容整理・共有システムへの登録</div>
-      <div class="d">支店・人数・希望ホテルなどを整理して共有システムに記録<span class="kr">　/　지점・인원・희망 호텔 등을 정리해 공유 시스템에 기록</span></div>
-    </div>
-    <div class="step">
-      <div class="t">ホテル部門への手配依頼・確認</div>
-      <div class="d">社内ホテル部門に手配を依頼し、確定内容を確認<span class="kr">　/　사내 호텔부서에 수배를 의뢰하고 확정 내용을 확인</span></div>
-    </div>
-    <div class="step">
-      <div class="t">計画書の作成</div>
-      <div class="d">担当者と共に旅行計画書を作成し、システムに登録<span class="kr">　/　담당자와 함께 여행 계획서를 작성해 시스템에 등록</span></div>
-    </div>
-  </div>
-</section>
-
-<section class="block" id="interest">
-  <h2>興味分野<span class="kr">관심 분야</span></h2>
-  <p class="lead">実習で感じた業務の非効率さを、技術でどう解決できるか興味を持っています。<span class="kr">실습에서 느꼈던 업무의 비효율을 기술로 어떻게 해결할 수 있을지에 관심이 있습니다.</span></p>
-
-  <div class="interest-grid">
-    <div class="interest-card">
-      <i class="ti ti-layout"></i>
-      <h3>フロントエンド<span class="kr">프론트엔드</span></h3>
-      <p>HTML・CSS・JavaScriptで、実際の業務で使いやすい画面を設計すること。<span class="kr">HTML・CSS・JavaScript로 실제 업무에 쓰기 편한 화면을 설계하는 것</span></p>
-    </div>
-    <div class="interest-card">
-      <i class="ti ti-server-2"></i>
-      <h3>バックエンド<span class="kr">백엔드</span></h3>
-      <p>Javaとデータベースで、業務データを正確に処理・管理する仕組みを作ること。<span class="kr">Java와 데이터베이스로 업무 데이터를 정확히 처리・관리하는 구조를 만드는 것</span></p>
-    </div>
-  </div>
-</section>
-
-<section class="block" id="works">
-  <h2>制作物<span class="kr">만든 결과물</span></h2>
-  <p class="lead">実習の経験をもとに、社内業務システムを個人プロジェクトとして再現しました。<span class="kr">실습 경험을 바탕으로 사내 업무 시스템을 개인 프로젝트로 재현했습니다.</span></p>
-
-  <div class="project-card">
-    <div>
-      <span class="tag">FRONTEND + BACKEND (WIP)</span>
-      <h3>インバウンド手配管理システム<span class="kr" style="font-size:0.7em;">인바운드 수배 관리 시스템</span></h3>
-      <p>支店からの依頼受付からホテル手配確認、計画書作成までを管理する社内システムを再現。<span class="kr">지점 의뢰 접수부터 호텔 수배 확인, 계획서 작성까지 관리하는 사내 시스템을 재현</span></p>
-    </div>
-    <a class="btn" href="../inbound-system/login.html">詳細を見る <i class="ti ti-arrow-right"></i></a>
-  </div>
-</section>
-
-<footer>
-  © 2026 Kim Min-seok (金敏錫)
-</footer>
-
+<script src="script.js"></script>
 </body>
 </html>
